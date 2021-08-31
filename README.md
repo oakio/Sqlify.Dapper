@@ -1,7 +1,7 @@
 # Welcome to SqlDsl.Dapper
 
-[![Build status](https://ci.appveyor.com/api/projects/status/h5pw3uu6j1imitkp?svg=true)](https://ci.appveyor.com/project/oakio/sqldsl.Dapper)
-[![Nuget Package](https://badgen.net/nuget/v/sqldsl)](https://www.nuget.org/packages/SqlDsl.Dapper)
+[![Build status](https://ci.appveyor.com/api/projects/status/h5pw3uu6j1imitkp?svg=true)](https://ci.appveyor.com/project/oakio/sqldsl-dapper)
+[![Nuget Package](https://badgen.net/nuget/v/sqldsl.dapper)](https://www.nuget.org/packages/SqlDsl.Dapper)
 
 # Intro
 Fluent SQL builder for [`Dapper`](https://github.com/DapperLib/Dapper) library.
@@ -48,6 +48,7 @@ public void InsertExample(IDbConnection connection)
     connection.Execute(query); // Dapper's Execute method
 }
 ```
+[up &#8593;](#how-to-use)
 ## UPDATE query example
 ```csharp
 public void UpdateExample(IDbConnection connection)
@@ -61,6 +62,7 @@ public void UpdateExample(IDbConnection connection)
     connection.Execute(query); // Dapper's Execute methods
 }
 ```
+[up &#8593;](#how-to-use)
 ## SELECT query example
 ```csharp
 public void SelectExample(IDbConnection connection)
@@ -75,6 +77,7 @@ public void SelectExample(IDbConnection connection)
     connection.Query(query); // Dapper's Query method
 }
 ```
+[up &#8593;](#how-to-use)
 ## DELETE query example
 ```csharp
 public void DeleteExample(IDbConnection connection)
@@ -88,7 +91,7 @@ public void DeleteExample(IDbConnection connection)
     connection.Execute(query); // Dapper's Execute method
 }
 ```
-
+[up &#8593;](#how-to-use)
 # How to build
 ```bash
 # build
