@@ -1,0 +1,26 @@
+image: Visual Studio 2019
+configuration: Release
+
+# build config
+build_script:
+  - dotnet build .\src
+
+# tests config
+test_script:
+  - ps: dotnet test .\src
+
+# pack config
+after_test:
+  - dotnet pack .\src
+
+# artifacts config
+artifacts:
+  - path: '.\build\artifacts\*.nupkg'
+
+# publish artifacts config
+deploy:
+  - provider: NuGet
+    on:
+      branch: master
+    api_key:
+      secure: Socnt0PiX/lB6LKCbBiaugOIb+kkJ0yTZzlp6VgVmIc3Xi26ngcyixogTux/9nvU

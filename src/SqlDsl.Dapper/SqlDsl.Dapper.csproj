@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <Authors>Ilya Dubadenko</Authors>
+    <Description>Fluent SQL builder for Dapper</Description>
+    <Copyright>Copyright (c) 2021</Copyright>
+    <PackageId>SqlDsl.Dapper</PackageId>
+    <PackageTags>sqlbuilder;fluentsql;sql;dapper</PackageTags>
+    <PackageProjectUrl>https://github.com/oakio/sqldsl.dapper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/oakio/sqldsl.dapper</RepositoryUrl>
+    <AssemblyName>SqlDsl.Dapper</AssemblyName>
+    <RootNamespace>SqlDsl.Dapper</RootNamespace>
+    <NoWarn>7035;1591</NoWarn>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Codestellation.Cepheid" Version="0.1.6" PrivateAssets="All" />
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="SqlDsl" Version="0.1.4" />
+  </ItemGroup>
+
+</Project>
