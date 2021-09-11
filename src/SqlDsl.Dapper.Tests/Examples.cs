@@ -9,7 +9,7 @@ namespace SqlDsl.Dapper.Tests
         {
             var u = new UsersTable();
 
-            InsertSqlQuery query = Sql
+            InsertQuery query = Sql
                 .Insert(u)
                 .Values(u.Id, 1)
                 .Values(u.Name, "Adam")
@@ -22,7 +22,7 @@ namespace SqlDsl.Dapper.Tests
         {
             var u = new UsersTable();
 
-            UpdateSqlQuery query = Sql
+            UpdateQuery query = Sql
                 .Update(u)
                 .Set(u.Age, u.Age + 1);
 
@@ -33,7 +33,7 @@ namespace SqlDsl.Dapper.Tests
         {
             var u = new UsersTable();
 
-            SelectSqlQuery query = Sql
+            SelectQuery query = Sql
                 .Select()
                 .From(u)
                 .Where(u.Age > 30);
@@ -45,7 +45,7 @@ namespace SqlDsl.Dapper.Tests
         {
             var u = new UsersTable();
 
-            DeleteSqlQuery query = Sql
+            DeleteQuery query = Sql
                 .Delete(u)
                 .Where(u.Id == 1);
 

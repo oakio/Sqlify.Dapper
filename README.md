@@ -39,12 +39,13 @@ public void InsertExample(IDbConnection connection)
 {
     var u = new UsersTable();
 
-    InsertSqlQuery query = Sql
+    InsertQuery query = Sql
         .Insert(u)
         .Values(u.Id, 1)
         .Values(u.Name, "Adam")
         .Values(u.Age, 30);
 
+    // INSERT INTO users (id, name, age) VALUES (@p1, @p2, @p3)    
     connection.Execute(query); // Dapper's Execute method
 }
 ```
@@ -59,6 +60,7 @@ public void UpdateExample(IDbConnection connection)
         .Update(u)
         .Set(u.Age, u.Age + 1);
 
+    // UPDATE users SET age = users.age + @p1
     connection.Execute(query); // Dapper's Execute methods
 }
 ```
@@ -74,6 +76,7 @@ public void SelectExample(IDbConnection connection)
         .From(u)
         .Where(u.Age > 30);
 
+    // SELECT * FROM users WHERE users.age > @p1
     connection.Query(query); // Dapper's Query method
 }
 ```
@@ -88,6 +91,7 @@ public void DeleteExample(IDbConnection connection)
         .Delete(u)
         .Where(u.Id == 1);
 
+    // DELETE FROM users WHERE users.id = @p1
     connection.Execute(query); // Dapper's Execute method
 }
 ```
