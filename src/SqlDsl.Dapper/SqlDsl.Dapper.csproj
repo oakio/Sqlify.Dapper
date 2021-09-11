@@ -9,6 +9,7 @@
     <PackageTags>sqlbuilder;fluentsql;sql;dapper</PackageTags>
     <PackageProjectUrl>https://github.com/oakio/sqldsl.dapper</PackageProjectUrl>
     <RepositoryUrl>https://github.com/oakio/sqldsl.dapper</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyName>SqlDsl.Dapper</AssemblyName>
     <RootNamespace>SqlDsl.Dapper</RootNamespace>
     <NoWarn>7035;1591</NoWarn>
