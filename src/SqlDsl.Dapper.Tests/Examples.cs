@@ -1,4 +1,5 @@
 using System.Data;
+using SqlDsl.Core;
 using SqlDsl.Core.Expressions;
 
 namespace SqlDsl.Dapper.Tests
@@ -7,7 +8,7 @@ namespace SqlDsl.Dapper.Tests
     {
         public void InsertExample(IDbConnection connection)
         {
-            var u = new UsersTable();
+            var u = Sql.Table<IUsersTable>();
 
             InsertQuery query = Sql
                 .Insert(u)
@@ -15,55 +16,50 @@ namespace SqlDsl.Dapper.Tests
                 .Values(u.Name, "Adam")
                 .Values(u.Age, 30);
 
-            connection.Execute(query); // Dapper's Execute* methods
+            var result = connection.Execute(query); // Dapper's Execute* methods
         }
 
         public void UpdateExample(IDbConnection connection)
         {
-            var u = new UsersTable();
+            var u = Sql.Table<IUsersTable>();
 
             UpdateQuery query = Sql
                 .Update(u)
                 .Set(u.Age, u.Age + 1);
 
-            connection.Execute(query); // Dapper's Execute* methods
+            var result = connection.Execute(query); // Dapper's Execute* methods
         }
 
         public void SelectExample(IDbConnection connection)
         {
-            var u = new UsersTable();
+            var u = Sql.Table<IUsersTable>();
 
             SelectQuery query = Sql
                 .Select()
                 .From(u)
                 .Where(u.Age > 30);
 
-            connection.Query(query); // Dapper's Query* methods
+            var result = connection.Query(query); // Dapper's Query* methods
         }
 
         public void DeleteExample(IDbConnection connection)
         {
-            var u = new UsersTable();
+            var u = Sql.Table<IUsersTable>();
 
             DeleteQuery query = Sql
                 .Delete(u)
                 .Where(u.Id == 1);
 
-            connection.Execute(query); // Dapper's Execute* methods
+            var result = connection.Execute(query); // Dapper's Execute* methods
         }
 
-        public class UsersTable : Table
+        public interface IUsersTable : ITable
         {
-            public ColumnExpression<int> Id;
-            public ColumnExpression<string> Name;
-            public ColumnExpression<int> Age;
+            ColumnExpression<int> Id { get; }
 
-            public UsersTable(string alias = null) : base("users", alias)
-            {
-                Id = CreateColumn<int>("id");
-                Name = CreateColumn<string>("name");
-                Age = CreateColumn<int>("age");
-            }
+            ColumnExpression<string> Name { get; }
+
+            ColumnExpression<int> Age { get; }
         }
     }
 }

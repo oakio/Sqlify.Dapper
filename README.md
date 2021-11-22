@@ -1,9 +1,7 @@
-# Welcome to SqlDsl.Dapper
-
+# SqlDsl.Dapper
 [![Build status](https://ci.appveyor.com/api/projects/status/h5pw3uu6j1imitkp?svg=true)](https://ci.appveyor.com/project/oakio/sqldsl-dapper)
 [![Nuget Package](https://badgen.net/nuget/v/sqldsl.dapper)](https://www.nuget.org/packages/SqlDsl.Dapper)
 
-# Intro
 Fluent SQL builder for [`Dapper`](https://github.com/DapperLib/Dapper) library.
 
 ## How to use:
@@ -11,19 +9,13 @@ Fluent SQL builder for [`Dapper`](https://github.com/DapperLib/Dapper) library.
     ```powershell
     Install-Package SqlDsl.Dapper
     ```
-2. Create per database table a class inherited from `Table`:
+2. Create per database table:
     ```csharp
-    public class UsersTable : Table
+    public interface IUsersTable : ITable
     {
-        public ColumnExpression<int> Id;
-        public ColumnExpression<string> Name;
-        public ColumnExpression<int> Age;
-        public UsersTable(string alias = null) : base("users", alias)
-        {
-            Id = CreateColumn<int>("id");
-            Name = CreateColumn<string>("name");
-            Age = CreateColumn<int>("age");
-        }
+        ColumnExpression<int> Id { get; }
+        ColumnExpression<string> Name { get; }
+        ColumnExpression<int> Age { get; }
     }
     ```
 3. Write a query!
@@ -37,7 +29,7 @@ Fluent SQL builder for [`Dapper`](https://github.com/DapperLib/Dapper) library.
 ```csharp
 public void InsertExample(IDbConnection connection)
 {
-    var u = new UsersTable();
+    var u = Sql.Table<IUsersTable>();
 
     InsertQuery query = Sql
         .Insert(u)
@@ -45,8 +37,8 @@ public void InsertExample(IDbConnection connection)
         .Values(u.Name, "Adam")
         .Values(u.Age, 30);
 
-    // INSERT INTO users (id, name, age) VALUES (@p1, @p2, @p3)    
-    connection.Execute(query); // Dapper's Execute method
+    // INSERT INTO Users (Id, Name, Age) VALUES (@p1, @p2, @p3)    
+    var result = connection.Execute(query); // Dapper's Execute method
 }
 ```
 [up &#8593;](#how-to-use)
@@ -54,14 +46,14 @@ public void InsertExample(IDbConnection connection)
 ```csharp
 public void UpdateExample(IDbConnection connection)
 {
-    var u = new UsersTable();
+    var u = Sql.Table<IUsersTable>();
 
     UpdateQuery query = Sql
         .Update(u)
         .Set(u.Age, u.Age + 1);
 
-    // UPDATE users SET age = users.age + @p1
-    connection.Execute(query); // Dapper's Execute methods
+    // UPDATE Users SET Age = Users.Age + @p1
+    var result = connection.Execute(query); // Dapper's Execute methods
 }
 ```
 [up &#8593;](#how-to-use)
@@ -69,15 +61,15 @@ public void UpdateExample(IDbConnection connection)
 ```csharp
 public void SelectExample(IDbConnection connection)
 {
-    var u = new UsersTable();
+    var u = Sql.Table<IUsersTable>();
 
     SelectQuery query = Sql
         .Select()
         .From(u)
         .Where(u.Age > 30);
 
-    // SELECT * FROM users WHERE users.age > @p1
-    connection.Query(query); // Dapper's Query method
+    // SELECT * FROM Users WHERE Users.Age > @p1
+    var result = connection.Query(query); // Dapper's Query method
 }
 ```
 [up &#8593;](#how-to-use)
@@ -85,14 +77,14 @@ public void SelectExample(IDbConnection connection)
 ```csharp
 public void DeleteExample(IDbConnection connection)
 {
-    var u = new UsersTable();
+    var u = Sql.Table<IUsersTable>();
 
     DeleteQuery query = Sql
         .Delete(u)
         .Where(u.Id == 1);
 
-    // DELETE FROM users WHERE users.id = @p1
-    connection.Execute(query); // Dapper's Execute method
+    // DELETE FROM Users WHERE Users.Id = @p1
+    var result = connection.Execute(query); // Dapper's Execute method
 }
 ```
 [up &#8593;](#how-to-use)
