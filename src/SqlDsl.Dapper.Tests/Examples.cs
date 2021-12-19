@@ -55,11 +55,11 @@ namespace SqlDsl.Dapper.Tests
 
         public interface IUsersTable : ITable
         {
-            ColumnExpression<int> Id { get; }
+            Column<int> Id { get; }
 
-            ColumnExpression<string> Name { get; }
+            Column<string> Name { get; }
 
-            ColumnExpression<int> Age { get; }
+            Column<int> Age { get; }
         }
     }
 }

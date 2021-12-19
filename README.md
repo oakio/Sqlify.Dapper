@@ -13,9 +13,9 @@ Fluent SQL builder for [`Dapper`](https://github.com/DapperLib/Dapper) library.
     ```csharp
     public interface IUsersTable : ITable
     {
-        ColumnExpression<int> Id { get; }
-        ColumnExpression<string> Name { get; }
-        ColumnExpression<int> Age { get; }
+        Column<int> Id { get; }
+        Column<string> Name { get; }
+        Column<int> Age { get; }
     }
     ```
 3. Write a query!
