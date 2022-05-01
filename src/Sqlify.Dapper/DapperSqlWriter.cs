@@ -1,8 +1,8 @@
 using System.Text;
 using Dapper;
-using SqlDsl.Core;
+using Sqlify.Core;
 
-namespace SqlDsl.Dapper
+namespace Sqlify.Dapper
 {
     public class DapperSqlWriter : ISqlWriter
     {

@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace SqlDsl.Dapper.Tests
+namespace Sqlify.Dapper.Tests
 {
     [TestFixture]
     public class ScratchPad

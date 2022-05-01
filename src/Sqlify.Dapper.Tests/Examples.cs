@@ -1,8 +1,8 @@
 using System.Data;
-using SqlDsl.Core;
-using SqlDsl.Core.Expressions;
+using Sqlify.Core;
+using Sqlify.Core.Expressions;
 
-namespace SqlDsl.Dapper.Tests
+namespace Sqlify.Dapper.Tests
 {
     public class Examples
     {

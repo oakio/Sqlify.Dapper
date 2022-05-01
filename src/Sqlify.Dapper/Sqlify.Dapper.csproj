@@ -5,14 +5,14 @@
     <Authors>Ilya Dubadenko</Authors>
     <Description>Fluent SQL builder for Dapper</Description>
     <Copyright>Copyright (c) 2021</Copyright>
-    <PackageId>SqlDsl.Dapper</PackageId>
+    <PackageId>Sqlify.Dapper</PackageId>
     <PackageTags>sqlbuilder;fluentsql;sql;dapper</PackageTags>
-    <PackageProjectUrl>https://github.com/oakio/sqldsl.dapper</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/oakio/sqldsl.dapper</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/oakio/sqlify.dapper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/oakio/sqlify.dapper</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <AssemblyName>SqlDsl.Dapper</AssemblyName>
-    <RootNamespace>SqlDsl.Dapper</RootNamespace>
+    <AssemblyName>Sqlify.Dapper</AssemblyName>
+    <RootNamespace>Sqlify.Dapper</RootNamespace>
     <NoWarn>7035;1591</NoWarn>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
@@ -21,7 +21,7 @@
   <ItemGroup>
     <PackageReference Include="Codestellation.Cepheid" Version="0.1.6" PrivateAssets="All" />
     <PackageReference Include="Dapper" Version="2.0.90" />
-    <PackageReference Include="SqlDsl" Version="0.3.1" />
+    <PackageReference Include="Sqlify" Version="0.3.2" />
   </ItemGroup>
   
   <ItemGroup>

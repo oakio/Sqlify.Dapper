@@ -1,13 +1,13 @@
-# SqlDsl.Dapper
-[![Build status](https://ci.appveyor.com/api/projects/status/h5pw3uu6j1imitkp?svg=true)](https://ci.appveyor.com/project/oakio/sqldsl-dapper)
-[![Nuget Package](https://badgen.net/nuget/v/sqldsl.dapper)](https://www.nuget.org/packages/SqlDsl.Dapper)
+# Sqlify.Dapper
+[![Build status](https://ci.appveyor.com/api/projects/status/h5pw3uu6j1imitkp?svg=true)](https://ci.appveyor.com/project/oakio/sqlify-dapper)
+[![Nuget Package](https://badgen.net/nuget/v/sqlify.dapper)](https://www.nuget.org/packages/Sqlify.Dapper)
 
 Fluent SQL builder for [`Dapper`](https://github.com/DapperLib/Dapper) library.
 
 ## How to use:
-1. Install latest nuget packet [`SqlDsl.Dapper`](https://www.nuget.org/packages/SqlDsl.Dapper/) from [nuget.org](https://www.nuget.org/packages/SqlDsl.Dapper/):
+1. Install latest nuget packet [`Sqlify.Dapper`](https://www.nuget.org/packages/Sqlify.Dapper/) from [nuget.org](https://www.nuget.org/packages/Sqlify.Dapper/):
     ```powershell
-    Install-Package SqlDsl.Dapper
+    Install-Package Sqlify.Dapper
     ```
 2. Create per database table:
     ```csharp
@@ -23,7 +23,7 @@ Fluent SQL builder for [`Dapper`](https://github.com/DapperLib/Dapper) library.
     * `UPDATE` query [example](#update-query-example)
     * `SELECT` query [example](#select-query-example)
     * `DELETE` query [example](#delete-query-example)
-    * More [examples](https://github.com/oakio/SqlDsl#examples)
+    * More [examples](https://github.com/oakio/Sqlify#examples)
 
 ## INSERT query example
 ```csharp

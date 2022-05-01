@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>SqlDsl.Dapper.Tests</AssemblyName>
-    <RootNamespace>SqlDsl.Dapper.Tests</RootNamespace>
+    <AssemblyName>Sqlify.Dapper.Tests</AssemblyName>
+    <RootNamespace>Sqlify.Dapper.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
     <NoWarn>7035</NoWarn>
   </PropertyGroup>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SqlDsl.Dapper\SqlDsl.Dapper.csproj" />
+    <ProjectReference Include="..\Sqlify.Dapper\Sqlify.Dapper.csproj" />
   </ItemGroup>
 
 </Project>
