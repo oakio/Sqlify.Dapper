@@ -21,7 +21,7 @@
   <ItemGroup>
     <PackageReference Include="Codestellation.Cepheid" Version="0.1.6" PrivateAssets="All" />
     <PackageReference Include="Dapper" Version="2.0.90" />
-    <PackageReference Include="Sqlify" Version="0.3.13" />
+    <PackageReference Include="Sqlify" Version="0.3.14" />
   </ItemGroup>
   
   <ItemGroup>
